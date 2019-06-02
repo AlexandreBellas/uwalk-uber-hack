@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.uberhack.uwalk.R;
 import com.uberhack.uwalk.fragment.AjudaFragment;
+import com.uberhack.uwalk.fragment.AmigosFragment;
 import com.uberhack.uwalk.fragment.MapsFragment;
 import com.uberhack.uwalk.fragment.ObjetivosFragment;
 import com.uberhack.uwalk.fragment.ResgatePontosFragment;
@@ -29,6 +30,7 @@ public class PrincipalActivity extends AppCompatActivity
     private ResgatePontosFragment resgatePontosFragment = new ResgatePontosFragment();
     private ObjetivosFragment objetivosFragment = new ObjetivosFragment();
     private AjudaFragment ajudaFragment = new AjudaFragment();
+    private AmigosFragment amigosFragment = new AmigosFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +96,10 @@ public class PrincipalActivity extends AppCompatActivity
         } else if (id == R.id.nav_ajuda) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.frameLayoutMain, ajudaFragment);
+            ft.commit();
+        } else if (id == R.id.nav_amigos) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frameLayoutMain, amigosFragment);
             ft.commit();
             getSupportActionBar().setTitle("Ajuda");
         } else if (id == R.id.nav_sair) {
